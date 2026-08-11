@@ -1,0 +1,30 @@
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecomm_dev_db
+    username: root
+    password: Rushikesh
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: auraderushikeshshivraj@gmail.com
+    password: jwsd nywi qqxz fqsb
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
