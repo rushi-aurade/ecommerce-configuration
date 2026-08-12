@@ -1,5 +1,8 @@
+server:
+  port: 7074
+
 spring:
-   datasource:
+  datasource:
     url: jdbc:mysql://localhost:3306/ecomm_dev_db
     username: root
     password: Rushikesh
@@ -15,7 +18,6 @@ spring:
     port: 587
     username: auraderushi@gmail.com
     password: itle jdwe eatp nogj
-
     properties:
       mail:
         smtp:
