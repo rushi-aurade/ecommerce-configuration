@@ -1,0 +1,35 @@
+spring:
+    datasource:
+    url: jdbc:mysql://localhost:3306/ecomm_dev_db
+    username: root
+    password: Rushikesh
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: auraderushi@gmail.com
+    password: itle jdwe eatp nogj
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+doubletick:
+  apikey: fake-doubletick-api-key-for-local-development
+  apiUrl: https://example.com/fake-doubletick-api
+
+kafka:
+  topic:
+    name:
+  bootstrap:
+    url: localhost:9092
+
+  
