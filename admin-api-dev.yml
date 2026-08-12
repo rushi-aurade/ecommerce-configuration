@@ -18,6 +18,10 @@ spring:
       client:
         url: http://localhost:1111/
 
+  app:
+    images:
+      upload-dir: "C:/Users/Admin/Product-Images"
+
 server:
   port: 7071
 
@@ -26,5 +30,3 @@ management:
     web:
       exposure:
         include: "*"
-
-images-upload-dir: "C:\\Users\\Admin\\Product-Images"
