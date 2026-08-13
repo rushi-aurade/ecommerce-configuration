@@ -4,31 +4,34 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: products-api
-          uri: lb://products-api
-          predicates:
-            - Path=/api/products/**
+      server:
+        webflux:
+          routes:
 
-        - id: user-api
-          uri: lb://user-api
-          predicates:
-            - Path=/api/user/**
+            - id: products-api
+              uri: lb://products-api
+              predicates:
+                - Path=/api/products/**
 
-        - id: order-api
-          uri: lb://order-api
-          predicates:
-            - Path=/api/order/**
+            - id: user-api
+              uri: lb://user-api
+              predicates:
+                - Path=/api/user/**
 
-        - id: notifications-api
-          uri: lb://notifications-api
-          predicates:
-            - Path=/api/notifications/**
+            - id: order-api
+              uri: lb://order-api
+              predicates:
+                - Path=/api/order/**
 
-        - id: admin-api
-          uri: lb://admin-api
-          predicates:
-            - Path=/api/admin/**
+            - id: notifications-api
+              uri: lb://notifications-api
+              predicates:
+                - Path=/api/notifications/**
+
+            - id: admin-api
+              uri: lb://admin-api
+              predicates:
+                - Path=/api/admin/**
 
 logging:
   level:
