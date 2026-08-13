@@ -29,3 +29,9 @@ spring:
           uri: lb://admin-api
           predicates:
             - Path=/api/admin/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: TRACE
+    org.springframework.cloud.loadbalancer: DEBUG
