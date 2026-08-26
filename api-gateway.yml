@@ -4,10 +4,6 @@ server:
 spring:
   cloud:
     gateway:
-
-      # =========================
-      # CORS CONFIGURATION
-      # =========================
       globalcors:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
@@ -24,46 +20,35 @@ spring:
               - "*"
             allowCredentials: true
 
-      # =========================
-      # API ROUTES
-      # =========================
       server:
         webflux:
           routes:
 
-            # Product Service
             - id: products-api
               uri: lb://products-api
               predicates:
                 - Path=/api/products/**
 
-            # User Service
             - id: user-api
               uri: lb://user-api
               predicates:
                 - Path=/api/user/**
 
-            # Order Service
             - id: order-api
               uri: lb://order-api
               predicates:
                 - Path=/api/order/**
 
-            # Notification Service
             - id: notifications-api
               uri: lb://notifications-api
               predicates:
                 - Path=/api/notifications/**
 
-            # Admin Service
             - id: admin-api
               uri: lb://admin-api
               predicates:
                 - Path=/api/admin/**
 
-# =========================
-# LOGGING
-# =========================
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
