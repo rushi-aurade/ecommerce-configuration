@@ -33,6 +33,21 @@ spring:
               predicates:
                 - Path=/api/admin/**
 
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:5173"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+                allowCredentials: true
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
