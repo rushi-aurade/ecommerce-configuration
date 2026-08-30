@@ -1,59 +1,47 @@
 server:
   port: 3333
-
 spring:
   cloud:
     gateway:
       server:
         webflux:
-
           globalcors:
             add-to-simple-url-handler-mapping: true
-
             cors-configurations:
               '[/**]':
                 allowedOrigins:
                   - "http://localhost:5173"
-
+                  - "http://localhost:5174"
                 allowedMethods:
                   - GET
                   - POST
                   - PUT
                   - DELETE
                   - OPTIONS
-
                 allowedHeaders:
                   - "*"
-
                 allowCredentials: true
-
           routes:
-
             - id: products-api
               uri: lb://products-api
               predicates:
                 - Path=/api/products/**
-
             - id: user-api
               uri: lb://user-api
               predicates:
                 - Path=/api/user/**
-
             - id: order-api
               uri: lb://order-api
               predicates:
                 - Path=/api/order/**
-
             - id: notifications-api
               uri: lb://notifications-api
               predicates:
                 - Path=/api/notifications/**
-
             - id: admin-api
               uri: lb://admin-api
               predicates:
                 - Path=/api/admin/**
-
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
